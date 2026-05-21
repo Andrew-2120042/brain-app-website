@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vael — Think</title>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body {
+  min-height: 100%;
+  background: #000;
+  color: #fff;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: 300;
+}
+
+.v-nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  padding: 36px 56px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 10;
+  background: linear-gradient(to bottom, #000 60%, transparent);
+}
+
+.v-nav-brand {
+  font-size: 12px;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.35);
+}
+
+.v-back {
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  color: rgba(255,255,255,0.3);
+  text-decoration: none;
+  transition: color 0.2s;
+  cursor: pointer;
+}
+.v-back:hover { color: rgba(255,255,255,0.7); }
+
+.v-page {
+  width: 100%;
+}
+
+/* ── HERO HEADER: full viewport ── */
+.v-hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  min-height: 600px;
+  overflow: hidden;
+}
+
+.v-hero-meta {
+  position: absolute;
+  top: 110px;
+  left: 56px;
+}
+
+.v-hero-question {
+  position: absolute;
+  top: 150px;
+  left: 56px;
+  max-width: 480px;
+}
+
+.v-hero-verdict {
+  position: absolute;
+  bottom: 120px;
+  left: 56px;
+  max-width: 540px;
+}
+
+.v-hero-conf {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  text-align: right;
+  padding-right: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+/* ── SCROLLABLE BODY ── */
+.v-body {
+  padding: 80px 56px 120px;
+  max-width: 1100px;
+  overflow-x: hidden;
+}
+
+/* ── THREE-SECTION GRID ── */
+.v-sections-top {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0 80px;
+  margin-bottom: 72px;
+}
+
+.v-sections-top .v-section:last-child {
+  transform: translateX(72px);
+}
+
+.v-section-bottom {
+  margin-bottom: 56px;
+}
+
+/* ── TOP META ── */
+.v-case-label {
+  font-size: 10px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.2);
+  display: block;
+  margin-bottom: 10px;
+}
+
+.v-mode-tag {
+  font-size: 10px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.2);
+  display: block;
+  margin-bottom: 32px;
+}
+
+/* ── QUESTION ── */
+.v-question {
+  font-size: 38px;
+  font-weight: 300;
+  color: rgba(255,255,255,0.35);
+  line-height: 1.4;
+  display: block;
+}
+
+/* ── VERDICT ── */
+.v-verdict {
+  font-size: 42px;
+  font-weight: 200;
+  color: #fff;
+  line-height: 1.2;
+  display: block;
+}
+
+/* ── CONFIDENCE ── */
+.v-conf-num {
+  font-size: clamp(220px, 30vw, 420px);
+  font-weight: 200;
+  color: #fff;
+  display: block;
+  line-height: 0.85;
+  letter-spacing: -0.05em;
+}
+
+.v-conf-label {
+  font-size: 11px;
+  letter-spacing: 0.22em;
+  color: rgba(255,255,255,0.3);
+  text-transform: uppercase;
+  display: block;
+  margin-top: 20px;
+  text-align: right;
+}
+
+/* ── SECTION BLOCKS ── */
+.v-section {
+  margin-bottom: 56px;
+}
+
+.v-section-title {
+  font-size: 11px;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.3);
+  display: block;
+  margin-bottom: 20px;
+  font-weight: 400;
+}
+
+.v-arrow {
+  font-size: 18px;
+  color: rgba(255,255,255,0.3);
+  display: block;
+  margin-bottom: 16px;
+}
+
+.v-bullets {
+  list-style: none;
+}
+
+.v-bullets li {
+  font-size: 22px;
+  font-weight: 300;
+  color: rgba(255,255,255,0.5);
+  line-height: 1.8;
+}
+
+.v-para {
+  font-size: 22px;
+  font-weight: 300;
+  color: rgba(255,255,255,0.5);
+  line-height: 1.8;
+}
+
+/* ── DIVIDER ── */
+.v-divider {
+  border: none;
+  border-top: 1px solid rgba(255,255,255,0.07);
+  margin: 64px 0;
+}
+
+/* ── PERCENTAGE BREAKDOWN (matches app layout) ── */
+.v-pct-section-title {
+  font-size: 14px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.28);
+  display: block;
+  margin-bottom: 32px;
+  font-weight: 400;
+}
+
+.v-pct-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 36px;
+  padding: 28px 0;
+}
+
+.v-pct-left {
+  min-width: 120px;
+  flex-shrink: 0;
+}
+
+.v-pct-num {
+  font-size: 64px;
+  font-weight: 200;
+  color: #fff;
+  line-height: 1;
+  display: block;
+}
+
+.v-pct-label {
+  font-size: 12px;
+  color: rgba(255,255,255,0.28);
+  letter-spacing: 0.06em;
+  display: block;
+  margin-top: 8px;
+  line-height: 1.4;
+}
+
+.v-pct-desc {
+  font-size: 18px;
+  font-weight: 300;
+  color: rgba(255,255,255,0.45);
+  line-height: 1.75;
+  flex: 1;
+  padding-top: 12px;
+}
+
+/* ── WHAT HELPS quote ── */
+.v-helps-quote {
+  font-size: 38px;
+  font-weight: 200;
+  color: #fff;
+  line-height: 1.4;
+  font-style: normal;
+  margin-top: 20px;
+  max-width: 760px;
+}
+
+</style>
+</head>
+<body>
+
+<nav class="v-nav">
+  <span class="v-nav-brand">Vael</span>
+  <span class="v-back" onclick="if(window.opener&&!window.opener.closed){window.opener.focus();}window.close();">← Back</span>
+</nav>
+
+<div class="v-page" id="v-page"></div>
+
+<script>
+const VERDICTS = [
+  {
+    case: 'Case 01', mode: 'OVERTHINKING',
+    question: 'I\'ve thought about this decision for months and still can\'t choose. What\'s actually happening?',
+    verdict: 'you already know the answer.\nyou just don\'t want the consequences attached to it.',
+    confidence: '88%',
+    why: ['Both options already make logical sense.', 'You\'re not searching for clarity anymore.', 'You\'re searching for emotional protection.'],
+    notSaying: 'You know exactly which option feels more honest. The problem is that honesty costs something — disappointment, guilt, loneliness, change, conflict. So the brain keeps thinking because thinking delays loss.',
+    usuallyHappens: ['Endless comparison loops.', 'Asking multiple people hoping someone removes responsibility.', 'Mistaking more analysis for progress.'],
+    within: [
+      { pct: '41%', label: 'Choose honestly', desc: 'You finally choose the harder option. Relief appears immediately after the fear.' },
+      { pct: '27%', label: 'Delay again', desc: 'You delay again. Situation worsens quietly while pretending nothing changed.' },
+      { pct: '20%', label: 'Choose comfort', desc: 'You choose comfort first. Regret arrives later disguised as "what if."' }
+    ],
+    other: [
+      { pct: '8%', label: 'New information', desc: 'New information genuinely changes the decision.' },
+      { pct: '4%', label: 'External collapse', desc: 'Both options collapse and the decision gets made for you externally.' }
+    ],
+    helps: 'Stop asking "what\'s the correct choice?" Ask: "which consequence am I more willing to live with?"'
+  },
+  {
+    case: 'Case 02', mode: 'SUCCESS / EMPTINESS',
+    question: 'Why does every achievement feel good for ten minutes and empty right after?',
+    verdict: 'achievement became emotional survival\ninstead of fulfillment.',
+    confidence: '83%',
+    why: ['Momentum replaced meaning.', 'Achievement became distraction from stillness.', 'You attached worth to movement.'],
+    notSaying: 'You\'re terrified the silence after success means none of this actually fixes you.',
+    usuallyHappens: ['Bigger goals after every win.', 'Inability to rest without guilt.', 'Emotional crashes after achievement.'],
+    within: [
+      { pct: '38%', label: 'Escalate goals', desc: 'You keep escalating goals to chase the feeling.' },
+      { pct: '29%', label: 'Burn out', desc: 'You burn out but call it "discipline."' },
+      { pct: '16%', label: 'Realize the truth', desc: 'You eventually realize the goal was never the emotional wound.' }
+    ],
+    other: [
+      { pct: '11%', label: 'Relationship interrupts', desc: 'A meaningful relationship interrupts the cycle.' },
+      { pct: '6%', label: 'Identity rebuild', desc: 'You pivot completely and rebuild identity outside performance.' }
+    ],
+    helps: 'Do something with no outcome attached to it. Your brain forgot how to exist without earning permission first.'
+  },
+  {
+    case: 'Case 03', mode: 'RELATIONSHIPS',
+    question: 'Why do I lose interest when someone finally treats me well?',
+    verdict: 'your nervous system mistakes\nunpredictability for chemistry.',
+    confidence: '85%',
+    why: ['Anxiety became emotionally familiar.', 'Stability feels emotionally quieter.', 'Peace stopped feeling intense enough.'],
+    notSaying: 'You don\'t fully trust love unless it makes you anxious first.',
+    usuallyHappens: ['Pulling away when things become safe.', 'Feeling "bored" after consistency appears.', 'Missing emotionally unavailable people.'],
+    within: [
+      { pct: '37%', label: 'Sabotage stability', desc: 'You sabotage stability without realizing it.' },
+      { pct: '31%', label: 'Return to chaos', desc: 'You return to emotionally chaotic dynamics because they feel "real."' },
+      { pct: '17%', label: 'Recognize security', desc: 'You eventually recognize calmness as security instead of absence.' }
+    ],
+    other: [
+      { pct: '9%', label: 'Pattern rewires', desc: 'One emotionally healthy relationship slowly rewires the pattern.' },
+      { pct: '6%', label: 'Full isolation', desc: 'You isolate entirely to avoid repeating it again.' }
+    ],
+    helps: 'Don\'t judge connection only by intensity. Some relationships feel quieter because your nervous system isn\'t fighting for survival inside them.'
+  },
+  {
+    case: 'Case 04', mode: 'FRIENDSHIP / DISTANCE',
+    question: 'My friends still talk to me, but I feel alone around them now. Why?',
+    verdict: 'the history survived.\nthe emotional closeness didn\'t.',
+    confidence: '78%',
+    why: ['Familiarity replaced vulnerability.', 'Everyone stayed updated but stopped being known.', 'The relationship became maintenance instead of connection.'],
+    notSaying: 'You miss who all of you were before survival mode.',
+    usuallyHappens: ['Group chats stay active.', 'Emotional intimacy disappears quietly.', 'Nobody officially leaves but everyone feels farther away.'],
+    within: [
+      { pct: '34%', label: 'Nostalgia bond', desc: 'The friendship continues mostly through nostalgia.' },
+      { pct: '26%', label: 'One conversation', desc: 'One honest conversation repairs emotional closeness.' },
+      { pct: '18%', label: 'Outgrow dynamic', desc: 'You slowly outgrow the dynamic entirely.' }
+    ],
+    other: [
+      { pct: '13%', label: 'Permanent distance', desc: 'Distance becomes permanent after life changes.' },
+      { pct: '9%', label: 'Reconnect through struggle', desc: 'Shared struggle unexpectedly reconnects everyone.' }
+    ],
+    helps: 'Stop trying to recreate old versions of people. Meet who they became.'
+  },
+  {
+    case: 'Case 05', mode: 'IDENTITY',
+    question: 'I don\'t know who I am when nobody needs something from me.',
+    verdict: 'you built identity around usefulness.',
+    confidence: '91%',
+    why: ['Being needed became emotional validation.', 'Productivity replaced self-definition.', 'Rest started feeling like disappearance.'],
+    notSaying: 'If you stop providing value, you\'re scared people stop choosing you.',
+    usuallyHappens: ['Overhelping.', 'Difficulty resting.', 'Feeling emotionally empty when alone.'],
+    within: [
+      { pct: '43%', label: 'Overextend further', desc: 'You continue overextending yourself to maintain connection.' },
+      { pct: '29%', label: 'Burnout arrives', desc: 'Burnout forces you to confront the pattern.' },
+      { pct: '19%', label: 'Self-worth separates', desc: 'You slowly separate self-worth from usefulness.' }
+    ],
+    other: [
+      { pct: '5%', label: 'Pattern reinforced', desc: 'A relationship reinforces the pattern further.' },
+      { pct: '4%', label: 'Emotional isolation', desc: 'You abruptly isolate from everyone emotionally.' }
+    ],
+    helps: 'Spend time somewhere you don\'t need to perform. Let your brain experience existence without earning it.'
+  },
+  {
+    case: 'Case 06', mode: 'FEAR OF STARTING',
+    question: 'I keep saying I\'ll start when I\'m ready, but I never feel ready.',
+    verdict: 'you\'re trying to remove vulnerability\nbefore action.',
+    confidence: '89%',
+    why: ['Preparation became emotional protection.', 'Readiness turned into perfectionism.', 'Starting would expose reality.'],
+    notSaying: 'You\'re less afraid of failure than being seen trying.',
+    usuallyHappens: ['Endless planning with no execution.', 'Constant "one more thing before I start."'],
+    within: [
+      { pct: '46%', label: 'Urgency replaces fear', desc: 'You delay until urgency replaces fear.' },
+      { pct: '24%', label: 'Abandon before public', desc: 'You abandon ideas before testing them publicly.' },
+      { pct: '19%', label: 'Begin imperfectly', desc: 'You finally begin imperfectly and realize the fear was larger than reality.' }
+    ],
+    other: [
+      { pct: '7%', label: 'Externally pushed', desc: 'Someone externally pushes you into action.' },
+      { pct: '4%', label: 'Opportunity lost', desc: 'The opportunity disappears completely from delay.' }
+    ],
+    helps: 'Your brain keeps imagining a version of you that feels fearless before beginning. That version never arrives.'
+  }
+];
+
+const params = new URLSearchParams(window.location.search);
+const idx = parseInt(params.get('case') || '0', 10);
+const v = VERDICTS[Math.min(Math.max(idx, 0), VERDICTS.length - 1)];
+
+const withinHTML = v.within.map(r => `
+  <div class="v-pct-row">
+    <div class="v-pct-left">
+      <span class="v-pct-num">${r.pct}</span>
+      <span class="v-pct-label">${r.label}</span>
+    </div>
+    <p class="v-pct-desc">${r.desc}</p>
+  </div>`).join('');
+
+const otherHTML = v.other.map(r => `
+  <div class="v-pct-row">
+    <div class="v-pct-left">
+      <span class="v-pct-num">${r.pct}</span>
+      <span class="v-pct-label">${r.label}</span>
+    </div>
+    <p class="v-pct-desc">${r.desc}</p>
+  </div>`).join('');
+
+document.getElementById('v-page').innerHTML = `
+  <div class="v-hero">
+    <div class="v-hero-meta">
+      <span class="v-case-label">${v.case}</span>
+      <span class="v-mode-tag">${v.mode}</span>
+    </div>
+    <div class="v-hero-question">
+      <span class="v-question">${v.question}</span>
+    </div>
+    <div class="v-hero-verdict">
+      <span class="v-verdict">${v.verdict.replace(/\n/g, '<br>')}</span>
+    </div>
+    <div class="v-hero-conf">
+      <span class="v-conf-num">${v.confidence}</span>
+      <span class="v-conf-label">confidence from simulation</span>
+    </div>
+  </div>
+
+  <div class="v-body">
+  <div class="v-sections-top">
+    <div class="v-section">
+      <span class="v-section-title">Why</span>
+      <span class="v-arrow">→</span>
+      <ul class="v-bullets">${v.why.map(b => `<li>${b}</li>`).join('')}</ul>
+    </div>
+    <div class="v-section">
+      <span class="v-section-title">What You're Not Saying</span>
+      <span class="v-arrow">→</span>
+      <p class="v-para">${v.notSaying}</p>
+    </div>
+  </div>
+
+  <div class="v-section-bottom v-section">
+    <span class="v-section-title">What Usually Happens</span>
+    <span class="v-arrow">→</span>
+    <ul class="v-bullets">${v.usuallyHappens.map(b => `<li>${b}</li>`).join('')}</ul>
+  </div>
+
+  <hr class="v-divider">
+
+  <div class="v-section">
+    <span class="v-pct-section-title">Within the ${v.confidence}</span>
+    ${withinHTML}
+  </div>
+
+  <div class="v-section" style="margin-top:48px;">
+    <span class="v-pct-section-title">The Other ${(100 - parseInt(v.confidence))+ '%'}</span>
+    ${otherHTML}
+  </div>
+
+  <hr class="v-divider">
+
+  <div class="v-section">
+    <span class="v-section-title">What Helps</span>
+    <p class="v-helps-quote">"${v.helps}"</p>
+  </div>
+  </div>
+`;
+
+document.title = 'Vael — ' + v.mode;
+</script>
+</body>
+</html>
