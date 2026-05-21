@@ -275,6 +275,51 @@ html, body {
   max-width: 760px;
 }
 
+/* ── MOBILE ── */
+@media (max-width: 768px) {
+  .v-nav { padding: 24px; }
+
+  /* Hero: stack vertically */
+  .v-hero { height: auto; min-height: 100vh; padding-bottom: 48px; }
+  .v-hero-meta { top: 80px; left: 24px; }
+  .v-hero-question { position: static; max-width: 100%; padding: 120px 24px 24px; }
+  .v-question { font-size: 22px; }
+  .v-hero-verdict { position: static; max-width: 100%; padding: 0 24px 32px; }
+  .v-verdict { font-size: 28px; }
+
+  /* Confidence: smaller, below verdict, left-aligned */
+  .v-hero-conf {
+    position: static;
+    transform: none;
+    text-align: left;
+    align-items: flex-start;
+    padding: 0 24px 40px;
+  }
+  .v-conf-num { font-size: 100px; }
+  .v-conf-label { text-align: left; }
+
+  /* Body */
+  .v-body { padding: 48px 24px 80px; max-width: 100%; overflow-x: visible; }
+
+  /* WHY + WHAT YOU'RE NOT SAYING: one after the other */
+  .v-sections-top {
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+    margin-bottom: 48px;
+  }
+  .v-sections-top .v-section:last-child {
+    transform: none;
+    padding-left: 0;
+  }
+
+  .v-bullets li { font-size: 17px; }
+  .v-para { font-size: 17px; }
+  .v-helps-quote { font-size: 24px; }
+
+  .v-pct-num { font-size: 44px; }
+  .v-pct-desc { font-size: 15px; }
+}
 </style>
 </head>
 <body>

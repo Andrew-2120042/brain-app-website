@@ -810,11 +810,24 @@ footer {
   .acc-body p { font-size: 16px; }
   .acc-title { color: rgba(255,255,255,0.9) !important; }
 
-  /* ── EXPERIENCE ── */
-  .exp-heading { font-size: 26px; left: 24px; top: 60px; }
-  .exp-sc { padding: 0 24px; }
+  /* ── EXPERIENCE: flat list on mobile, override JS inline styles ── */
+  #experience { height: auto !important; min-height: unset; }
+  .exp-sticky { position: static !important; height: auto !important; overflow: visible !important; }
+  .exp-cases-stack { position: static !important; }
+  .exp-heading { position: static !important; font-size: 26px; padding: 80px 24px 40px; display: block; pointer-events: auto; }
+  .exp-sc {
+    position: static !important;
+    transform: none !important;
+    opacity: 1 !important;
+    filter: none !important;
+    padding: 28px 24px !important;
+    border-top: 1px solid rgba(255,255,255,0.08);
+    pointer-events: auto !important;
+  }
+  .exp-sc-row { flex-direction: column; gap: 12px; }
+  .exp-sc-meta { flex-direction: row; align-items: center; gap: 10px; }
   .exp-sc-q { font-size: 20px; }
-  .exp-sc-meta { width: 52px; }
+  .exp-sc-view { padding-top: 4px; color: rgba(255,255,255,0.5) !important; }
 
   /* ── POSITIONING CARD ── */
   #positioning { padding: 60px 24px; }
