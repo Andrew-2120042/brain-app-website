@@ -854,6 +854,14 @@ footer {
 
   /* ── FOOTER ── */
   footer { padding: 28px 24px; flex-direction: column; gap: 24px; align-items: flex-start; }
+
+  /* ── HIDE QR WIDGET ── */
+  .qr-panel-wrap, .qr-reopen-btn { display: none !important; }
+
+  /* ── REDUCE GAP: problem → built ── */
+  #problem { padding-bottom: 40px; }
+  #built { margin-top: 0; }
+  .built-left { padding-top: 40px; }
 }
 /* ── QR WIDGET ── */
 
@@ -1169,7 +1177,7 @@ footer {
         <span class="download-label dl-el">Vael</span>
         <span class="download-h1 dl-el">your brain is ready.</span>
         <span class="download-h2 dl-el">bring it something real.</span>
-        <a href="#download" class="app-store-btn dl-el">Download on the App Store</a>
+        <a href="https://apps.apple.com/app/vael" target="_blank" class="app-store-btn dl-el">Download on the App Store</a>
         <span class="download-fine dl-el">free to start. iOS only.</span>
       </div>
       <canvas id="globe-canvas"></canvas>
