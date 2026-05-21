@@ -785,37 +785,80 @@ footer {
 
 /* ── RESPONSIVE ── */
 @media (max-width: 768px) {
+  /* NAV */
   #hero-nav { padding: 0 24px; top: 28px; }
 
+  /* HERO */
+  #hero { padding-left: 24px; }
   .hero-line-1, .hero-line-2 { font-size: 29px; }
 
+  /* PROBLEM */
   #problem { padding: 80px 24px; align-items: flex-start; padding-top: 120px; }
   .problem-large { font-size: 29px; }
   .problem-small { font-size: 15px; }
   .problem-gap { height: 28px; }
 
-  #hero { padding-left: 24px; }
+  /* BUILT — stack vertically, show all cards */
   #built { height: auto; min-height: unset; display: block; }
-  .built-left { position: static; width: 100%; height: auto; padding: 80px 24px 60px; }
-  .built-heading { font-size: 28px; margin-bottom: 40px; }
-  .built-right { display: none; }
-  .acc-body p { font-size: 18px; }
+  .built-left { position: static; width: 100%; height: auto; padding: 80px 24px 40px; }
+  .built-heading { font-size: 26px; margin-bottom: 32px; }
+  .built-right {
+    display: block;
+    position: static;
+    width: 100%;
+    height: 56vw;
+    overflow: hidden;
+  }
+  .built-video-wrap {
+    position: absolute;
+    inset: 0;
+  }
+  .built-video-wrap.v-small {
+    width: 80%;
+    height: 80%;
+  }
+  .acc-body p { font-size: 16px; }
   .acc-item.active .acc-body { max-height: 400px; }
 
-  .exp-heading { font-size: 26px; left: 24px; top: 60px; }
+  /* EXPERIENCE */
+  .exp-heading { font-size: 22px; left: 24px; top: 60px; }
   .exp-sc { padding: 0 24px; }
-  .exp-sc-q { font-size: 24px; }
-  .exp-sc-meta { width: 52px; }
-  .verdict-card { padding: 36px 28px 48px; }
-  .v-verdict { font-size: 22px; }
-  .v-confidence-num { font-size: 40px; }
+  .exp-sc-q { font-size: 18px; }
+  .exp-sc-meta { width: 44px; }
 
-  #positioning { padding: 80px 24px; }
-  .pos-line { font-size: 43px; }
+  /* POSITIONING */
+  #positioning { padding: 56px 24px; }
+  .pos-line { font-size: 32px; }
 
-  .download-h1, .download-h2 { font-size: 38px; }
+  /* DOWNLOAD + GLOBE — stack vertically, globe below */
+  .pos-dark-inner {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 80px 24px 24px;
+    gap: 0;
+  }
+  .pos-dark-text {
+    width: 100%;
+    z-index: 2;
+  }
+  #globe-canvas {
+    position: relative;
+    right: unset;
+    top: unset;
+    width: 100%;
+    height: 60vw;
+    margin-top: 24px;
+  }
+  .download-h1, .download-h2 { font-size: 36px; }
+  .download-h2 { margin-bottom: 36px; }
 
-  footer { padding: 24px; flex-direction: column; gap: 16px; align-items: flex-start; }
+  /* FOOTER */
+  footer {
+    padding: 32px 24px;
+    flex-direction: column;
+    gap: 24px;
+    align-items: flex-start;
+  }
 }
 /* ── QR WIDGET ── */
 
