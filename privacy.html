@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vael — Privacy Policy</title>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body {
+  height: 100%;
+  background: #000;
+  color: #fff;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: 300;
+  overflow: hidden;
+}
+
+a { color: inherit; text-decoration: none; }
+
+/* ── NAV ── */
+.p-nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  padding: 32px 56px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 20;
+  pointer-events: none;
+}
+.p-brand {
+  font-size: 12px;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.25);
+  pointer-events: auto;
+}
+.p-back {
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  color: rgba(255,255,255,0.25);
+  text-decoration: none;
+  pointer-events: auto;
+  transition: color 0.2s;
+}
+.p-back:hover { color: rgba(255,255,255,0.65); }
+
+/* ── LAYOUT ── */
+.layout {
+  display: flex;
+  height: 100vh;
+}
+
+/* ── LEFT PANEL ── */
+.left-panel {
+  width: 38%;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  padding: 0 64px;
+}
+
+.page-title {
+  font-size: 76px;
+  font-weight: 200;
+  line-height: 1.08;
+  color: #fff;
+  letter-spacing: -0.025em;
+}
+
+/* ── RIGHT PANEL ── */
+.right-panel {
+  flex: 1;
+  height: 100vh;
+  overflow-y: auto;
+  padding: 100px 64px 120px 64px;
+  border-left: 1px solid rgba(255,255,255,0.07);
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255,255,255,0.12) transparent;
+}
+.right-panel::-webkit-scrollbar { width: 1px; }
+.right-panel::-webkit-scrollbar-track { background: transparent; }
+.right-panel::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.18); }
+
+/* ── CONTENT TYPOGRAPHY ── */
+.meta {
+  font-size: 12px;
+  font-weight: 300;
+  color: rgba(255,255,255,0.28);
+  letter-spacing: 0.06em;
+  margin-bottom: 40px;
+  display: block;
+}
+
+.divider {
+  border: none;
+  border-top: 1px solid rgba(255,255,255,0.07);
+  margin: 40px 0;
+}
+
+.sec-heading {
+  font-size: 14px;
+  font-weight: 500;
+  color: #fff;
+  display: block;
+  margin-bottom: 18px;
+  letter-spacing: 0.01em;
+}
+
+.sub-heading {
+  font-size: 14px;
+  font-weight: 500;
+  color: rgba(255,255,255,0.9);
+  display: block;
+  margin-top: 28px;
+  margin-bottom: 12px;
+  letter-spacing: 0.01em;
+}
+
+p {
+  font-size: 14px;
+  font-weight: 300;
+  color: rgba(255,255,255,0.58);
+  line-height: 1.85;
+  margin-bottom: 14px;
+}
+
+p:last-child { margin-bottom: 0; }
+
+ul {
+  list-style: none;
+  margin: 10px 0 16px 0;
+}
+
+ul li {
+  font-size: 14px;
+  font-weight: 300;
+  color: rgba(255,255,255,0.58);
+  line-height: 1.85;
+  padding-left: 20px;
+  position: relative;
+  margin-bottom: 4px;
+}
+
+ul li::before {
+  content: '—';
+  position: absolute;
+  left: 0;
+  color: rgba(255,255,255,0.22);
+}
+
+strong {
+  font-weight: 500;
+  color: rgba(255,255,255,0.85);
+}
+
+/* ── MOBILE ── */
+@media (max-width: 768px) {
+  html, body { overflow: auto; }
+  .layout { flex-direction: column; height: auto; }
+  .left-panel {
+    width: 100%;
+    padding: 110px 24px 48px;
+    align-items: flex-start;
+  }
+  .page-title { font-size: 52px; }
+  .right-panel {
+    height: auto;
+    overflow-y: visible;
+    padding: 40px 24px 80px;
+    border-left: none;
+    border-top: 1px solid rgba(255,255,255,0.07);
+  }
+  .p-nav { padding: 24px; }
+}
+</style>
+</head>
+<body>
+
+<nav class="p-nav">
+  <span class="p-brand">Vael</span>
+  <a href="index.html" class="p-back">← Back</a>
+</nav>
+
+<div class="layout">
+
+  <div class="left-panel">
+    <h1 class="page-title">Privacy<br>Policy</h1>
+  </div>
+
+  <div class="right-panel">
+
+    <span class="meta">Last updated: May 2026</span>
+
+    <hr class="divider">
+
+    <span class="sec-heading">Overview</span>
+    <p>This Privacy Policy describes how [App Name] ("we," "our," or "the app") collects, uses, and protects your information when you use our iOS application. We built this app with privacy as our core priority. Your personal inputs stay on your device. We do not sell your data. We do not build advertising profiles. We do not share your personal information with third parties except as strictly necessary to provide the service as described below.</p>
+    <p>The brain provides perspective and simulation — not instructions. All decisions remain entirely yours.</p>
+
+    <hr class="divider">
+
+    <span class="sec-heading">What We Collect and How It Flows</span>
+
+    <span class="sub-heading">1. Information You Provide — Thinks</span>
+    <p>When you use the app you submit situations, decisions, and feelings for processing. We refer to these text inputs as Thinks. The text you type into the app is transmitted directly to Anthropic's API for processing to generate responses. This is a technical necessity — without transmitting this input to the AI moe app cannot function.</p>
+
+    <span class="sub-heading">2. Information Stored on Your Device</span>
+    <p>Your historic data — including the questions you submit, the verdicts and reasoning returned by the AI, your archetypes, your pattern identity, and any chat messages — is stored locally on your iPhone. We do not have remote access to your history. We cannot read it. We cannot retrieve it. It exists strictly on your device.</p>
+
+    <span class="sub-heading">3. Technical Network Data — IP Address</span>
+    <p>When the app connects to the internet to process a request your device's IP address is transmitted to Anthropic's servers as part of standard network communication. We do not log, store, or track your IP address. Anthropic handles this data in accordance with their own privacy policy available at anthropic.com/privacy.</p>
+
+    <span class="sub-heading">4. Notifications</span>
+    <p>If you explicitly grant permission the app sends occasional reminders. We do not collect or transmit any data through notifications. You can disable these at any time via your iPhone Settings or within the app Settings.</p>
+
+    <span class="sub-heading">5. Usage Datanalytics</span>
+    <p>We do not collect analytics, crash logs, or telemetry. We do not use third party analytics SDKs. We have zero visibility into how you interact with the app.</p>
+
+    <span class="sub-heading">6. Purchase and Subscription Information</span>
+    <p>In-app purchases and subscriptions are processed securely by Apple via the App Store. We never see or store your payment or biometric data. We use RevenueCat to verify your subscription status. RevenueCat receives your anonymous App Store receipt to confirm active access. Their privacy policy is available at revenuecat.com/privacy.</p>
+
+    <hr class="divider">
+
+    <span class="sec-heading">How We Use Your Information</span>
+    <p>To provide the service — your text inputs are processed by Anthropic's Claude AI to generate verdicts, outcomes, and pattern analyses.</p>
+    <p>To improve personalization locally — the app passes a window of your locally stored history back to the AI during active sessions to deliver cohesive cross-session continuity. This history can be wiped instantly by you at any time from Settings.</p>
+    <p><strong>We never:</strong></p>
+    <ul>
+      <li>Use your data for advertisingrketing, or tracking</li>
+      <li>Build data profiles to sell to third parties</li>
+      <li>Use your data to train AI models — Anthropic's API policies explicitly state that data sent via their API is not used for model training by default</li>
+    </ul>
+
+    <hr class="divider">
+
+    <span class="sec-heading">Legal Basis for Processing — GDPR</span>
+    <p>For users in the European Economic Area and United Kingdom — we process your personal data on the following legal bases:</p>
+    <p>Contractual necessity — transmitting your think text to Anthropic's API is required to deliver the core service you agreed to receive.</p>
+    <p>Consent — for notifications and any processing beyond core functionality.</p>
+    <p>You have the right to access, correct, and delete your personal data at any time. Since all data is stored locally on your device you can delete it by clearing your history in Settings or deleting the app. For any data processed through Anthropic's API contact us at the address below.</p>
+
+    <hr class="divider">
+
+    <span class="sec-heading">AI Disclosure and Consent</span>
+    <p>This app relies entirely on artificial intelligence to deliver its core experience. By using cation you acknowledge and agree that:</p>
+    <ul>
+      <li>Your text inputs are transferred to Anthropic's Claude AI for processing</li>
+      <li>All insights, verdicts, and analyses are machine-generated not human-curated</li>
+      <li>AI responses do not constitute professional advice — medical, legal, financial, or psychological therapy</li>
+      <li>Confidence percentages and simulation counts are illustrative framings of probabilistic AI reasoning and are not scientifically validated statistics</li>
+      <li>No AI system can predict the future and no response should be treated as a guarantee of any outcome</li>
+      <li>You use all responses entirely at your own risk and discretion</li>
+      <li>All decisions remain entirely yours</li>
+    </ul>
+    <p><strong>Crisis Warning:</strong> If you are experiencing a mental health crisis please contact a qualified healthcare professional or local emergency crisis service immediately. This app is not a crisis service.</p>
+
+    <hr class="divider">
+
+    <span class="sec-heading">International Data Transfers</span>
+    <p>This application is developed in India. When you submit inputs they are processed on Anthropic's servers located in the Und States. By using this app you consent to the cross-border transfer of your data for the exclusive purpose of AI processing.</p>
+
+    <hr class="divider">
+
+    <span class="sec-heading">Your Rights, Controls, and Data Erasure</span>
+    <p>Because your data is held locally you have total sovereignty over it:</p>
+    <p>Clear Think History — available in Settings. Permanently deletes all your thinks, pattern data, and brain memory from your device. Your subscription and usage counters are kept. Irreversible.</p>
+    <p>App Deletion — uninstalling the app completely removes all local storage instantly.</p>
+    <p>Disable Notifications — available in iPhone Settings or within the app Settings at any time.</p>
+    <p>Subscription Management — cancel your Core or Pro subscription through iPhone Settings — Apple ID — Subscriptions. You retain access until the end of the current billing period.</p>
+    <p>Opt Out of AI Processing — the core function of this app requires sending your inputs to Anthropic's AI. If you do not wish your inputs to be processed by AI you should not use this app.</p>
+    <p>Data Portability — s your data on our servers and cannot provide a remote export file. You can manually copy or screenshot your data inside the app at any time.</p>
+
+    <hr class="divider">
+
+    <span class="sec-heading">Compliance with Indian Law — DPDP Act 2023</span>
+    <p>In compliance with the Digital Personal Data Protection Act 2023 India:</p>
+    <p>Consent and Withdrawal — your processing is based entirely on your explicit consent given during onboarding. You have the right to withdraw consent at any time by discontinuing use and deleting the app or clearing your history.</p>
+    <p>Age Restriction — this application is not intended for individuals under the age of 18. We do not knowingly process digital personal data from minors. If you are under 18 please do not use this app.</p>
+    <p><strong>Grievance Redressal Mechanism</strong></p>
+    <p>If you have questions, concerns, or complaints regarding how your data is handled or wish to exercise your legal rights under the DPDP Act contact our designated Grievance Officer:</p>
+    <p>Name: Andrew Wilson Email: godiandrewwilson@gmail.com App: [ApWebsite: [Your Website URL]</p>
+
+    <hr class="divider">
+
+    <span class="sec-heading">California Users — CCPA</span>
+    <p>We do not sell or share your personal information as defined under the California Consumer Privacy Act. We do not sell data to third parties. We do not share data for cross-context behavioral advertising.</p>
+
+    <hr class="divider">
+
+    <span class="sec-heading">Australian Users</span>
+    <p>We comply with the Australian Privacy Act 1988 and the Australian Privacy Principles.</p>
+
+    <hr class="divider">
+
+    <span class="sec-heading">Cookies and Tracking</span>
+    <p>This app does not use cookies, tracking pixels, or any cross-app tracking technology. We do not participate in any advertising networks or data broker services of any kind.</p>
+
+    <hr class="divider">
+
+    <span class="sec-heading">Data Breach Notification</span>
+    <p>In the unlikely event of a data breach affecting data transmitted through our API we will notify affected users within 72 hours of becoming aware of the breach in accordance with applicable law. Since all personal data is stored locally on your device and we operate no servers storing your personal information the risk of a data breach affecting your thinks is minimal.</p>
+
+    <hr class="divider">
+
+    <span class="sec-heading">Changes to This Picy</span>
+    <p>We may periodically update this document. The date at the top will reflect the latest revision. Continued use of the app after an update implies acknowledgment and acceptance of the revised terms. We review and update this privacy policy at least once every 12 months or whenever our data practices change.</p>
+
+    <hr class="divider">
+
+    <span class="sec-heading">Governing Law</span>
+    <p>This Privacy Policy is governed by the laws of India. Any legal disputes or claims arising out of this policy shall be subject to the exclusive jurisdiction of the courts located in Hyderabad Telangana India.</p>
+
+  </div>
+</div>
+
+</body>
+</html>

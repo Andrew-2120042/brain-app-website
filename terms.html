@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vael — Terms and Conditions</title>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body {
+  height: 100%;
+  background: #000;
+  color: #fff;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: 300;
+  overflow: hidden;
+}
+
+a { color: inherit; text-decoration: none; }
+
+/* ── NAV ── */
+.p-nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  padding: 32px 56px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 20;
+  pointer-events: none;
+}
+.p-brand {
+  font-size: 12px;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.25);
+  pointer-events: auto;
+}
+.p-back {
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  color: rgba(255,255,255,0.25);
+  text-decoration: none;
+  pointer-events: auto;
+  transition: color 0.2s;
+}
+.p-back:hover { color: rgba(255,255,255,0.65); }
+
+/* ── LAYOUT ── */
+.layout {
+  display: flex;
+  height: 100vh;
+}
+
+/* ── LEFT PANEL ── */
+.left-panel {
+  width: 38%;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  padding: 0 64px;
+}
+
+.page-title {
+  font-size: 76px;
+  font-weight: 200;
+  line-height: 1.08;
+  color: #fff;
+  letter-spacing: -0.025em;
+}
+
+/* ── RIGHT PANEL ── */
+.right-panel {
+  flex: 1;
+  height: 100vh;
+  overflow-y: auto;
+  padding: 100px 64px 120px 64px;
+  border-left: 1px solid rgba(255,255,255,0.07);
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255,255,255,0.12) transparent;
+}
+.right-panel::-webkit-scrollbar { width: 1px; }
+.right-panel::-webkit-scrollbar-track { background: transparent; }
+.right-panel::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.18); }
+
+/* ── CONTENT TYPOGRAPHY ── */
+.meta {
+  font-size: 12px;
+  font-weight: 300;
+  color: rgba(255,255,255,0.28);
+  letter-spacing: 0.06em;
+  margin-bottom: 40px;
+  display: block;
+}
+
+.divider {
+  border: none;
+  border-top: 1px solid rgba(255,255,255,0.07);
+  margin: 40px 0;
+}
+
+.sec-heading {
+  font-size: 14px;
+  font-weight: 500;
+  color: #fff;
+  display: block;
+  margin-bottom: 18px;
+  letter-spacing: 0.01em;
+}
+
+p {
+  font-size: 14px;
+  font-weight: 300;
+  color: rgba(255,255,255,0.58);
+  line-height: 1.85;
+  margin-bottom: 14px;
+}
+
+p:last-child { margin-bottom: 0; }
+
+ul {
+  list-style: none;
+  margin: 10px 0 16px 0;
+}
+
+ul li {
+  font-size: 14px;
+  font-weight: 300;
+  color: rgba(255,255,255,0.58);
+  line-height: 1.85;
+  padding-left: 20px;
+  position: relative;
+  margin-bottom: 4px;
+}
+
+ul li::before {
+  content: '—';
+  position: absolute;
+  left: 0;
+  color: rgba(255,255,255,0.22);
+}
+
+strong {
+  font-weight: 500;
+  color: rgba(255,255,255,0.85);
+}
+
+/* ── MOBILE ── */
+@media (max-width: 768px) {
+  html, body { overflow: auto; }
+  .layout { flex-direction: column; height: auto; }
+  .left-panel {
+    width: 100%;
+    padding: 110px 24px 48px;
+    align-items: flex-start;
+  }
+  .page-title { font-size: 52px; }
+  .right-panel {
+    height: auto;
+    overflow-y: visible;
+    padding: 40px 24px 80px;
+    border-left: none;
+    border-top: 1px solid rgba(255,255,255,0.07);
+  }
+  .p-nav { padding: 24px; }
+}
+</style>
+</head>
+<body>
+
+<nav class="p-nav">
+  <span class="p-brand">Vael</span>
+  <a href="index.html" class="p-back">← Back</a>
+</nav>
+
+<div class="layout">
+
+  <div class="left-panel">
+    <h1 class="page-title">Terms and<br>Conditions</h1>
+  </div>
+
+  <div class="right-panel">
+
+    <span class="meta">Last updated: May 2026</span>
+
+    <span class="sec-heading">1. Acceptance of Terms</span>
+    <p>By downloading, installing, or using this application you agree to be bound by these Terms of Service. If you do not agree do not use the app. These terms apply to all users worldwide regardless of location.</p>
+
+    <hr class="divider">
+
+    <span class="sec-heading">2. What This App Is</span>
+    <p>This app is an AI-powered decision support tool. It uses artificial intelligence to simulate possible outcomes of situations you describe and provides perspective to help you think through decisions.</p>
+    <p>This app is not and does not claim to be:</p>
+    <ul>
+      <li>A licensed therapist, psychologist, or mental health professional</li>
+      <li>A medical professional or medical advice service</li>
+      <li>A legal advisor or legal service</li>
+      <li>A financial advisor or financial planning service</li>
+      <li>A crisis intervention or emergency service</li>
+      <li>A substitute for professional help of any kind</li>
+    </ul>
+    <p>AI-generated responses in this app are simulations and observations. They are not professional advice. Never treat them as professional advice. Always consult a qualified professional for medical, legal, financial, mental health, or any other professional guidance.</p>
+
+    <hr class="divider">
+
+    <span class="sec-heading">3. Not a Crisis Service</span>
+    <p>This app is not equipped to handle mental health emergencies. If you are experiencing thoughts of self-harm, suicide, or any kind of crisis — stop using this app immediately and contact emergency services or a crisis helpline in your country.</p>
+    <p>Global crisis resources:</p>
+    <ul>
+      <li>International Association for Suicide Prevention: https://www.iasp.info/resources/Crisis_Centres</li>
+      <li>Crisis Text Line (US, UK, Canada, Ireland): Text HOME to 741741</li>
+      <li>Samaritans (UK and Ireland): 116 123</li>
+      <li>Lifeline (Australia): 13 11 14</li>
+      <li>iCall (India): 9152987821</li>
+      <li>Vandrevala Foundation (India): 1860-2662-345</li>
+    </ul>
+    <p>The app may decline to respond to certain inputs that suggest crisis situations. This is a design decision not a substitute for real professional help.</p>
+
+    <hr class="divider">
+
+    <span class="sec-heading">4. AI-Generated Content</span>
+    <p>All responses are produced by artificial intelligence using Anthropic's Claude API.</p>
+    <p>You acknowledge and agree that:</p>
+    <ul>
+      <li>AI responses may be inaccurate, incomplete, or inappropriate for your specific situation</li>
+      <li>Confidence percentages and simulation counts displayed in the app are illustrative framings of probabilistic AI reasoning and are not scientifically validated statistics</li>
+      <li>The app does not literally run thousands of discrete simulations — this framing communicates uncertainty and probability in an accessible way</li>
+      <li>No AI system can predict the future and no response should be treated as a guarantee of any outcome</li>
+      <li>You use all responses entirely at your own risk and discretion</li>
+    </ul>
+
+    <hr class="divider">
+
+    <span class="sec-heading">5. Your Responsibilities</span>
+    <p>You agree to:</p>
+    <ul>
+      <li>Use this app only for lawful personal purposes</li>
+      <li>Not attempt to manipulate, jailbreak, or extract harmful information from the AI system</li>
+      <li>Not use the app to plan or facilitate illegal activities</li>
+      <li>Not rely solely on this app for major life decisions</li>
+      <li>Take full responsibility for any decisions you make as a result of using this app</li>
+    </ul>
+    <p>You are responsible for your own decisions. The app provides perective. You provide judgment.</p>
+
+    <hr class="divider">
+
+    <span class="sec-heading">6. Eligibility</span>
+    <p>You must be at least 17 years old to use this app. By using the app you confirm you meet the minimum age requirement in your country or that you have parental consent where required.</p>
+    <p>If you are under 18 certain types of content and decisions may not be appropriate. Use good judgment.</p>
+
+    <hr class="divider">
+
+    <span class="sec-heading">7. Data and Privacy</span>
+    <p>Your thinks, chat history, and personal data are stored locally on your device. We do not collect, store, or have access to your personal think history on our servers.</p>
+    <p>Your inputs are sent to Anthropic's API for AI processing. Your inputs are therefore subject to Anthropic's privacy policy available at anthropic.com/privacy in addition to ours.</p>
+    <p>We recommend you do not enter sensitive personal information such as full legal names, addresses, financial account details, passport numbers, or government identification numbers into the app.</p>
+    <p>We do not sell your data. We do not share your data with third parties except as strictly required to operate the service.</p>
+    <p><strong>For users in the European Economic Area and United Kingdom:</strong> You have rights under GDPR including the right to access, correct, and delete your personal data. Since all data is stored locally on your device you can delete it at any time by deleting the app. For any data processed through our API contact us at the address below.</p>
+    <p><strong>For users in California:</strong> You have rights under the CCPA including the right to know what personal data is collected and the right to deletion. Contact us at the address below to exercise these rights.</p>
+    <p><strong>For users in Australia:</strong> We comply with the Australian Privacy Act 1988 and the Australian Privacy Principles.</p>
+    <p>For full details see our Privacy Policy.</p>
+
+    <hr class="divider">
+
+    <span class="sec-heading">8. Subscription and Payments</span>
+    <p>The app offers a free tier with limited monthly usage and a paid subscription for unlimited access.</p>
+    <p>All subscriptions are processed through Apple's App Store. All billing, refunds, and subscription management are handled by Apple under their terms and conditions. We do not directly process or store payment information.</p>
+    <p>Subscription pricing may vary by country and is displayed in your local currency in the App Store before purchase.</p>
+    <p>Subscriptions auto-renew unless cancelled at least 24 hours before the end of the current billing period. Manage and cancel subscriptions through your Apple ID settings.</p>
+    <p>Refunds are handled by Apple. We do not offer direct refunds except where required by applicable law in your jurisdiction. EU and UK consumers have statutory rights including a 14-day cooling off period for digital purchases — contact Apple to exercise these rights.</p>
+
+    <hr class="divider">
+
+    <span class="sec-heading">9. Intellectual Property</span>
+    <p>All content, design, branding, and code in this app are owned by us or our licensors and are protected by international intellectual property laws.</p>
+    <p>You may not copy, reproduce, modify, distribute, or create derivative works from any part of this app without our explicit written permission.</p>
+    <p>Your inputs remain yours. By using the app you grant us a limited licence to process your inputs throh our AI system solely for the purpose of generating responses to you. We do not claim ownership of your inputs and do not use them for training AI models.</p>
+
+    <hr class="divider">
+
+    <span class="sec-heading">10. Disclaimer of Warranties</span>
+    <p>This app is provided on an as-is and as-available basis worldwide. We make no warranties express or implied including but not limited to:</p>
+    <ul>
+      <li>Accuracy or reliability of AI responses</li>
+      <li>Uninterrupted or error-free service</li>
+      <li>Fitness for any particular purpose</li>
+      <li>That the app will meet your specific requirements</li>
+    </ul>
+    <p>Some jurisdictions do not allow the exclusion of implied warranties. In those jurisdictions our liability is limited to the minimum extent permitted by law.</p>
+
+    <hr class="divider">
+
+    <span class="sec-heading">11. Limitation of Liability</span>
+    <p>To the maximum extent permitted by applicable law in your jurisdiction we are not liable for any indirect, incidental, special, consequential, or punitive damages arising from your use of this app.</p>
+    <p>This includes but is not limited to:</p>
+    <ul>
+      <li>Decisions made based on AI responses</li>
+      <li>Loss of data if the app is deleted or malfunctions</li>
+      <li>Any outcomes resulting from following or not following app suggestions</li>
+      <li>Emotional distress arising from app content</li>
+    </ul>
+    <p>Our total liability for any claim shall not exceed the greater of the amount you paid for the app in the twelve months preceding the claim or USD $10.</p>
+    <p><strong>For EU and UK consumers:</strong> Nothing in these terms affects your statutory rights as a consumer which cannot be excluded or limited by contract.</p>
+    <p><strong>For Australian consumers:</strong> Our goods and services come with guarantees that cannot be excluded under the Australian Consumer Law.</p>
+
+    <hr class="divider">
+
+    <span class="sec-heading">12. Indemnification</span>
+    <p>You agree to indemnify and hold harmless the app and its developers from any claims, damages, losses, or expenses including reasonable legal fees arising from your use of the app, your violation of these terms, or your violation of any third party rights.</p>
+
+    <hr class="divider">
+
+    <span class="sec-heading">13. App Store Terms</span>
+    <p>This app is distributed through Apple's App Store. Apple is not a party to these Terms of Service and is not responsible for the app or its content. Apple has no obligation to provide maintenance or support for this app. In the event of any claim that the app fails to conform to applicable legal warranty you may notify Apple and Apple will refund the purchase price if applicable.</p>
+
+    <hr class="divider">
+
+    <span class="sec-heading">14. Third Party Services</span>
+    <p>This app uses Anthropic's Claude API for AI processing. Use of the app constitutes acceptance of Anthropic's usage policies. We are not responsible for Anthropic's services, availability, or policies.</p>
+
+    <hr class="divider">
+
+    <span class="sec-heading">15. Prohibited Uses</span>
+    <p>You may not use this app to:</p>
+    <ul>
+      <li>Engage in any unlawful activity in any jurisdiction</li>
+      <li>Harass, threaten, or harm any person</li>
+      <li>Generate content that violates any applicable law</li>
+      <li>Attempt to reverse engineer or extract the AI system prompt or model</li>
+      <li>Resell or commercially exploit the app's AI responses</li>
+      <li>Impersonate any person or entity</li>
+      <li>Violate any applicable export control laws</li>
+    </ul>
+
+    <hr class="divider">
+
+    <span class="sec-heading">16. Service Availability</span>
+    <p>We do not guarantee the app will be available at all times in all countries. We may restrict access in certain regions to comply with local laws. We reserve the right to modify, suspend, or discontinue the service at any time without notice.</p>
+
+    <hr class="divider">
+
+    <span class="sec-heading">17. Changes to Terms</span>
+    <p>We may update these terms at any time. We will notify you of material changes through the app or by updating the date at the top of this document. Continued use after changes constitutes acceptance of the updated terms. If you do not agree to the changes stop using the app.</p>
+
+    <hr class="divider">
+
+    <span class="sec-heading">18. Governing Law and Disputes</span>
+    <p>These terms are governed by the laws of India without regard to conflict of law principles.</p>
+    <p><strong>For users outside India:</strong> You may also have rights under the laws of your own country that cannot be waived by this clause. Nothing in this section limits rights you have under the laws of your own jurisdiction.</p>
+    <p><strong>For EU users:</strong> You may access the European Commission's Online Dispute Resolution platform at ec.europa.eu/consumers/odr</p>
+    <p><strong>For UK users:</strong> You may contact the UK's Alternative Dispute Resolution service.</p>
+    <p>We encourage you to contact us directly to resolve any dispute before pursuing formal legal action.</p>
+
+    <hr class="divider">
+
+    <span class="sec-heading">19. Force Majeure</span>
+    <p>We are not liable for any failure to perform our obligations where such failure results from causes beyond our reasonable control including but not limited to Anthropic API downtime, Apple App Store outages, internet infrastructure failures, natural disasters, or government actions.</p>
+
+    <hr class="divider">
+
+    <span class="sec-heading">20. EU and UK Consumer Rights</span>
+    <p>For EU and UK consumers the indemnification clause in section 12 applies only to the extent permitted by applicable consumer protection law in your jurisdiction. Nothing in these terms removes or limits rights you have under EU or UK consumer protection law that cannot be waived by contract.</p>
+
+    <hr class="divider">
+
+    <span class="sec-heading">21. Severability</span>
+    <p>If any provision of these terms is found to be unenforceable in any jurisdiction that provision will be modified to the minimum extent necessary or severed. The remaining provisions continue in full force.</p>
+
+    <hr class="divider">
+
+    <span class="sec-heading">22. Entire Agreement</span>
+    <p>These Terms of Service and our Privacy Policy constitute the entire agreement between you and us regarding the app and supersede all prior agreements.</p>
+
+    <hr class="divider">
+
+    <span class="sec-heading">23. Contact</span>
+    <p>For questions, concerns, or legal notices:</p>
+    <p>Email: godiandrewwilson@gmail.com</p>
+    <p>Company: [your name or registered company]</p>
+
+  </div>
+</div>
+
+</body>
+</html>
